@@ -306,6 +306,9 @@ function handleRequest(req, body, url) {
 		case "/client/menu/locale/en":
 			FinalOutput = ReadJson('client/menu/locale/en.json');
 			break;
+		case "/client/menu/locale/ru":
+			FinalOutput = ReadJson('client/menu/locale/ru.json');
+			break;
 		case "/client/game/version/validate":
 			FinalOutput = ReadJson('client/game/version/validate.json');
 			break;
@@ -336,6 +339,10 @@ function handleRequest(req, body, url) {
 			break;
 		case "/client/locale/en":
 			FinalOutput = ReadJson('client/locale/en.json');
+			break;
+			//fix for russian language
+		case "/client/locale/ru":
+			FinalOutput = ReadJson('client/locale/ru.json');
 			break;
 		case "/client/locations":
 			FinalOutput = ReadJson('client/locations.json');
