@@ -1,0 +1,1 @@
+/client/game/login with data {"email":"Iksu","pass":"d41d8cd98f00b204e9800998ecf8427e","version":{"major":"0.11.2.2680","minor":"live","game":"live","backend":"6","taxonomy":"341"},"device_id":"c3082cac9c510318575805eb0a28f3ff","develop":true}
