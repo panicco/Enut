@@ -364,7 +364,7 @@ function getTradersInfo(url){
 
 function prepareRandomBot(body){
 
-	return ReadJson('client/game/bot/bot_generate.json');//use premaded bots for now still working on creating
+	return ReadJson('client/game/bot/bot_generate2.json');//use premaded bots for now still working on creating
 	//have an error with reading created data like this
 	if(body != "{}")
 	var BODY = JSON.parse(body);
