@@ -126,7 +126,7 @@ function handleMoving(body) {
 		case "Examine"://still testing cuz not adding right ID to examine
 			console.log(body);
 			console.log(body.item);
-			var item = body.item;//need to graw with it tmp id
+			var item = body.item;//need to graw with it tmp id - propably  Enut\client\handbook\templates.json
 			tmpList.data[1].Encyclopedia[item] = true;
 			fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
 			FinalOutput = "OK";
@@ -466,9 +466,9 @@ function handleRequest(req, body, url) {
 		case "/client/game/login":
 			LoginData = JSON.parse(body);
 			LoginName = (LoginData.email != "")?LoginData.email:LoginName;
-			console.log('Data retrived from user: ' + LoginName)
+			console.log('Data extraction from folder: client/profile/' + LoginName)
 			playerListJson = "client/profile/" + LoginName + "/list.json";
-			FinalOutput = ReadJson('client/game/' + LoginName + '/login.json');
+			FinalOutput = ReadJson('client/profile/' + LoginName + '/login.json');
 			break;
 		case "/client/items":
 			FinalOutput = ReadJson('client/items.json');

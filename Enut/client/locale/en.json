@@ -13385,12 +13385,12 @@
 				"Location": "Customs",
 				"Description": "Port zone customs terminal employee. Initially dealing in the terminal’s goods, over the course of conflict put together a gang to grab everything he could put his hands on in the vicinity of the terminal."
 			},
-			"59c0ea2130c28d455c92e892": {
-				"FullName": "Name",
-				"FirstName": "Name",
-				"Nickname": "Name",
-				"Location": "Name",
-				"Description": "Name"
+			"polivilasTrader": {
+				"FullName": "Polivilas",
+				"FirstName": "Polivilas",
+				"Nickname": "Polivilas",
+				"Location": "unknowncheats cave",
+				"Description": "Polivilas"
 			},
 			"5a7c2eca46aef81a7ca2145d": {
 				"FullName": "Sergey Arsenyevich Samoylov",
@@ -13406,12 +13406,19 @@
 				"Location": "Tarkov's central market",
 				"Description": "He worked as a director in big market located in Tarkov's suburb. Sells everything about clothing and gear."
 			},
-			"5c0647fdd443bc2504c2d371": {
+			"jeagerTrader": {
 				"FullName": "Kharitonov Ivan Egorovich",
 				"FirstName": "Ivan Kharitonov",
 				"Nickname": "Jaeger",
 				"Location": "Priozersky reserve",
 				"Description": "He worked in the forest hunting property of the Priozersky reserve under the State Jaegers Service. Professional hunter and survival specialist. He guarded and guards, no matter what, his jaeger’s ground from various aggressive individuals."
+			},
+			"MasterMaoci": {
+				"FullName": "TheMaoci",
+				"FirstName": "Maoci the Coder",
+				"Nickname": "TheMaoci",
+				"Location": "UnknownCheats",
+				"Description": "He tries to create new place to live in so be gentle and buy his staff with curiocity and fear ;)"
 			}
 		}
 	},
