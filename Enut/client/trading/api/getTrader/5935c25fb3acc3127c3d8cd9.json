@@ -14,7 +14,7 @@
 		"discount_end": 0,
 		"buyer_up": true,
 		"currency": "USD",
-		"supply_next_time": 1551040000,
+		"supply_next_time": 1570225200,
 		"repair": {
 			"availability": false,
 			"quality": "2",
@@ -32,7 +32,7 @@
 		},
 		"gridHeight": 160,
 		"loyalty": {
-			"currentLevel": 0,
+			"currentLevel": 4,
 			"currentStanding": 0,
 			"currentSalesSum": 0,
 			"loyaltyLevels": {

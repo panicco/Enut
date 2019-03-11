@@ -14,7 +14,7 @@
 	"discount_end": 0,
 	"buyer_up": true,
 	"currency": "RUB",
-	"supply_next_time": 1551040000,
+	"supply_next_time": 1570225200,
 	"repair": {
 		"availability": false,
 		"quality": "0",
@@ -36,7 +36,7 @@
 	},
 	"gridHeight": 120,
 	"loyalty": {
-		"currentLevel": 0,
+		"currentLevel": 4,
 		"currentStanding": 0,
 		"currentSalesSum": 4370,
 		"loyaltyLevels": {
@@ -62,5 +62,7 @@
 			}
 		}
 	},
-	"sell_category": []
+	"sell_category": [
+		"5447e1d04bdc2dff2f8b4567"
+	]
 }
