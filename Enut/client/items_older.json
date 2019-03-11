@@ -128123,7 +128123,7 @@
 				"CreditsPrice": 100000,
 				"ItemSound": "keys",
 				"Prefab": {
-					"path": "assets/content/items/spec/item_keycard_lab/item_keycard_lab_orange.bundle",
+					"path": "assets/content/items/spec/keys/item_key_9.bundle",
 					"rcid": ""
 				},
 				"UsePrefab": {
@@ -128182,7 +128182,7 @@
 				"CreditsPrice": 100000,
 				"ItemSound": "keys",
 				"Prefab": {
-					"path": "assets/content/items/spec/item_keycard_lab/item_keycard_lab_white.bundle",
+					"path": "assets/content/items/spec/keys/item_key_9.bundle",
 					"rcid": ""
 				},
 				"UsePrefab": {
@@ -128241,7 +128241,7 @@
 				"CreditsPrice": 100000,
 				"ItemSound": "keys",
 				"Prefab": {
-					"path": "assets/content/items/spec/item_keycard_lab/item_keycard_lab_blue.bundle",
+					"path": "assets/content/items/spec/keys/item_key_9.bundle",
 					"rcid": ""
 				},
 				"UsePrefab": {
@@ -128300,7 +128300,7 @@
 				"CreditsPrice": 45000,
 				"ItemSound": "keys",
 				"Prefab": {
-					"path": "assets/content/items/spec/item_keycard_lab/item_keycard_lab_green.bundle",
+					"path": "assets/content/items/spec/keys/item_key_9.bundle",
 					"rcid": ""
 				},
 				"UsePrefab": {
@@ -128359,7 +128359,7 @@
 				"CreditsPrice": 100000,
 				"ItemSound": "keys",
 				"Prefab": {
-					"path": "assets/content/items/spec/item_keycard_lab/item_keycard_lab_yellow.bundle",
+					"path": "assets/content/items/spec/keys/item_key_9.bundle",
 					"rcid": ""
 				},
 				"UsePrefab": {
