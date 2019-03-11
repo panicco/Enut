@@ -468,7 +468,7 @@ function handleRequest(req, body, url) {
 			LoginName = (LoginData.email != "")?LoginData.email:LoginName;
 			console.log('Data retrived from user: ' + LoginName)
 			playerListJson = "client/profile/" + LoginName + "/list.json";
-			FinalOutput = ReadJson('client/game/' + LoginName + '/login.json');
+			FinalOutput = ReadJson('client/profile/' + LoginName + '/login.json');
 			break;
 		case "/client/items":
 			FinalOutput = ReadJson('client/items.json');
