@@ -18,8 +18,8 @@ var getTrader = new RegExp('/client/trading/api/getTrader/', 'i');
 var traderImg = new RegExp('/files/([a-z0-9/\.jpng])+', 'i');
 var content = new RegExp('/uploads/([a-z0-9/\.jpng_])+', 'i');
 var pushNotifier = new RegExp('/push/notifier/get/', 'i');
-var playerListJson = "client/profile/name/list.json";
 var LoginName = "maoci";
+var playerListJson = "client/profile/" + LoginName + "/list.json";
 var ItemOutput = "";
 var stashX = 10; // fix for your stash size
 var stashY = 66; // ^ if you edited it ofc
@@ -32,16 +32,16 @@ itemJSON = itemJSON.data;
 function noMoreCyrlic(word){
     var answer = "";
     var A = new Array();A["Ё"]="YO";A["Й"]="I";A["Ц"]="TS";A["У"]="U";A["К"]="K";A["Е"]="E";A["Н"]="N";A["Г"]="G";A["Ш"]="SH";A["Щ"]="SCH";A["З"]="Z";A["Х"]="H";A["Ъ"]="'";A["ё"]="yo";A["й"]="i";A["ц"]="ts";A["у"]="u";A["к"]="k";A["е"]="e";A["н"]="n";A["г"]="g";A["ш"]="sh";A["щ"]="sch";A["з"]="z";A["х"]="h";A["ъ"]="'";A["Ф"]="F";A["Ы"]="I";A["В"]="V";A["А"]="A";A["П"]="P";A["Р"]="R";A["О"]="O";A["Л"]="L";A["Д"]="D";A["Ж"]="ZH";A["Э"]="E";A["ф"]="f";A["ы"]="i";A["в"]="v";A["а"]="a";A["п"]="p";A["р"]="r";A["о"]="o";A["л"]="l";A["д"]="d";A["ж"]="zh";A["э"]="e";A["Я"]="YA";A["Ч"]="CH";A["С"]="S";A["М"]="M";A["И"]="I";A["Т"]="T";A["Ь"]="'";A["Б"]="B";A["Ю"]="YU";A["я"]="ya";A["ч"]="ch";A["с"]="s";A["м"]="m";A["и"]="i";A["т"]="t";A["ь"]="'";A["б"]="b";A["ю"]="yu";
-	for (var i in word){
-		if (word[i] === 'undefined' || word[i] === ' ' )
-		{
-			answer += " ";
-		}
-		else 
-		{
-			answer += A[word[i]];
-		}
-	}
+for (var i in word){
+    if (word[i] === 'undefined' || word[i] === ' ' )
+	{
+        answer += " ";
+    }
+    else 
+	{
+        answer += A[word[i]];
+    }
+}
 return answer;
 }
 function getRandomInt(min, max) {
@@ -114,7 +114,6 @@ function getSize(itemtpl, itemID, location){
 	}
 	return [outX, outY, outL, outR, outU, outD];
 }//from polivilas work well so i add it
-
 function handleMoving(body) {
 	var tmpList = JSON.parse(ReadJson(playerListJson));
 	switch(body.Action) {
@@ -150,30 +149,30 @@ function handleMoving(body) {
 			}
 			break;
 		case "Remove"://fix from polivilas
-			toDo = [body.item];
-			while(true){
-				if(toDo[0] != undefined){
-					while(true){ // needed else iterator may decide to jump over stuff
-						var tmpEmpty = "yes";
-						for (var tmpKey in tmpList.data[1].Inventory.items) {	
-							if ((tmpList.data[1].Inventory.items[tmpKey].parentId && tmpList.data[1].Inventory.items[tmpKey].parentId == toDo[0]) || (tmpList.data[1].Inventory.items[tmpKey]._id && tmpList.data[1].Inventory.items[tmpKey]._id == toDo[0])) {
-								ItemOutput.data.items.del.push({"_id": tmpList.data[1].Inventory.items[tmpKey]._id});
-								toDo.push(tmpList.data[1].Inventory.items[tmpKey]._id);
-								tmpList.data[1].Inventory.items.splice(tmpKey, 1);
-								tmpEmpty = "no";
+				toDo = [body.item];
+				while(true){
+					if(toDo[0] != undefined){
+						while(true){ // needed else iterator may decide to jump over stuff
+							var tmpEmpty = "yes";
+							for (var tmpKey in tmpList.data[1].Inventory.items) {	
+								if ((tmpList.data[1].Inventory.items[tmpKey].parentId && tmpList.data[1].Inventory.items[tmpKey].parentId == toDo[0]) || (tmpList.data[1].Inventory.items[tmpKey]._id && tmpList.data[1].Inventory.items[tmpKey]._id == toDo[0])) {
+									ItemOutput.data.items.del.push({"_id": tmpList.data[1].Inventory.items[tmpKey]._id});
+									toDo.push(tmpList.data[1].Inventory.items[tmpKey]._id);
+									tmpList.data[1].Inventory.items.splice(tmpKey, 1);
+									tmpEmpty = "no";
+								}
 							}
+							if(tmpEmpty == "yes"){
+								break;
+							};
 						}
-						if(tmpEmpty == "yes"){
-							break;
-						};
+						toDo.splice(0, 1);
+						continue;
 					}
-					toDo.splice(0, 1);
-					continue;
+					break;
 				}
-				break;
-			}
-			fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
-			FinalOutput = "OK";
+				fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
+				FinalOutput = "OK";
 			break;
 		case "Split":
 			for (var key in tmpList.data[1].Inventory.items) {
@@ -346,24 +345,25 @@ function getTradersInfo(url){
 		//we dont need to do var here but fuck it
 		//now we creating full traders body
 		var output = '{"err": 0,"errmsg": null,"data": [' + 
-		ReadJson("client/trading/api/getTrader/54cb50c76803fa8b248b4571.json") + ', ' + /* Prapor */
+				ReadJson("client/trading/api/getTrader/54cb50c76803fa8b248b4571.json") + ', ' + /* Prapor */
                 ReadJson("client/trading/api/getTrader/54cb57776803fa99248b456e.json") + ', ' + /* Therapist */
                 ReadJson("client/trading/api/getTrader/579dc571d53a0658a154fbec.json") + ', ' + /* Fence */
                 ReadJson("client/trading/api/getTrader/58330581ace78e27b8b10cee.json") + ', ' + /* Skier */
                 ReadJson("client/trading/api/getTrader/5935c25fb3acc3127c3d8cd9.json") + ', ' + /* Peacekeeper */
                 ReadJson("client/trading/api/getTrader/5a7c2eca46aef81a7ca2145d.json") + ', ' + /* Mechanic */
                 ReadJson("client/trading/api/getTrader/5ac3b934156ae10c4430e83c.json") + ', ' + /* Ragman */
-                ReadJson("client/trading/api/getTrader/polivilasTrader.json") + ', ' + 		/* Polivilas */
-                ReadJson("client/trading/api/getTrader/jeagerTrader.json") + ', ' + 		/* Jaeger */
-                ReadJson("client/trading/api/getTrader/MasterMaoci.json") + ']}';		/* TheMaoci */
+                ReadJson("client/trading/api/getTrader/polivilasTrader.json") + ', ' + 			/* Polivilas */
+                ReadJson("client/trading/api/getTrader/jeagerTrader.json") + ', ' + 			/* Jaeger */
+                ReadJson("client/trading/api/getTrader/MasterMaoci.json") + ']}';				/* TheMaoci */
 		return output;
 	}
 	// if not fullbody return exact trader table for all 3 states
+	// console.log(url.replace('/client', 'client').replace('/trader/', '/') + ".json");
 	return '{"err": 0,"errmsg": null,"data": ' + ReadJson(url.replace('/client', 'client').replace('/trader/', '/') + ".json") + '}';
 }
 
 function prepareRandomBot(body){
-	//console.log(ReadJson('client/game/bot/bot_generate.json'));
+
 	return ReadJson('client/game/bot/bot_generate.json');//use premaded bots for now still working on creating
 	//have an error with reading created data like this
 	if(body != "{}")
@@ -406,10 +406,10 @@ function handleRequest(req, body, url) {
 			console.error(err);
 		}
 	}
-	// special events handler
-	// this deletes loading of levels in traders delete 2 lines below - then u will get dumped all level items
+	//special events handler
+	//this deletes loading of levels in traders delete 2 lines below - then u will get dumped all level items
 	//if(url.indexOf("?retry=1") > -1 || url.indexOf("?retry=2") > -1 || url.indexOf("?retry=3") > -1) 
-	//	return;
+	//return;
 	//creating custom trader tables
 	if (url.match(assort) || url.match(prices) || url.match(getTrader)){
 		FinalOutput = getTradersInfo(url);
@@ -433,7 +433,7 @@ function handleRequest(req, body, url) {
 		case "/client/match/group/status":
 		case "/client/match/group/looking/stop":
 		case "/client/match/group/exit_from_menu":
-			break;//disable unused bullshit for now
+			break;
 		case "/client/friend/list":
 			FinalOutput = '{"err":0, "errmsg":null, "data":{"Friends":[], "Ignore":[], "InIgnoreList":[]}}';
 			break;
@@ -466,9 +466,9 @@ function handleRequest(req, body, url) {
 		case "/client/game/login":
 			LoginData = JSON.parse(body);
 			LoginName = (LoginData.email != "")?LoginData.email:LoginName;
-			console.log('Data extraction from folder: client/profile/' + LoginName)
+			console.log('Data retrived from user: ' + LoginName)
 			playerListJson = "client/profile/" + LoginName + "/list.json";
-			FinalOutput = ReadJson('client/profile/' + LoginName + '/login.json');
+			FinalOutput = ReadJson('client/game/' + LoginName + '/login.json');
 			break;
 		case "/client/items":
 			FinalOutput = ReadJson('client/items.json');
@@ -581,10 +581,30 @@ server.listen(PORT, function() {
 	console.log('EFTPriv-> port:%s <- made by: polivilas / moded by: TheMaoci',PORT);
 	console.log('default: name <-> will use this folder if not put any name in login');
 	//We starting to adds images of new traders if not exists in Tarkov temp files
-	var images = ["jaeger.jpg","polivilas.jpg","themaoci.jpg"];//images to check
-	var direcotry = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\files\\trader\\avatar\\";//directory of images to check
+	var images = ["jaeger.jpg","polivilas.jpg","themaoci.jpg"];
+	var direcotry = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\files\\trader\\avatar\\";
+	//fix for non existed directory - dirty code not shorted yet
+var fc = require('fs')
+var dirTest_1 = process.env.TEMP + "\\Battlestate Games\\";
+var dirTest_2 = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\";
+var dirTest_3 = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\files\\";
+var dirTest_4 = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\files\\trader\\";
+if (!fc.existsSync(dirTest_1)){
+    fc.mkdirSync(dirTest_1);
+}
+if (!fc.existsSync(dirTest_2)){
+    fc.mkdirSync(dirTest_2);
+}
+if (!fc.existsSync(dirTest_3)){
+    fc.mkdirSync(dirTest_3);
+}
+if (!fc.existsSync(dirTest_4)){
+    fc.mkdirSync(dirTest_4);
+}
+if (!fc.existsSync(direcotry)){
+    fc.mkdirSync(direcotry);
+}
 	const fs = require('fs'); const fs2 = require('fs');
-	//donno wny but it cannot be done in for loop ...
 		fs.access(direcotry + images[0], fs.F_OK, (err) => {
 		  if (err) {
 			console.error("File not found Copying File " + images[0]);
@@ -612,4 +632,4 @@ server.listen(PORT, function() {
 			return
 		  }
 		});
-});
+	});

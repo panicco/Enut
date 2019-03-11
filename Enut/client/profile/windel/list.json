@@ -600,12 +600,12 @@
 			"savage": "5c755512xc54682353958e91424",
 			"Info": {
 				"Nickname": "Windel",
-				"LowerNickname": "tarkov_user",
+				"LowerNickname": "windel",
 				"Side": "Usec",
 				"Voice": "Usec_2",
-				"Level": 88,
-				"Experience": 1000000000,
-				"RegistrationDate": 1337,
+				"Level": 70,
+				"Experience": 100000000,
+				"RegistrationDate": 13371337,
 				"GameVersion": "Developer",
 				"AccountType": 2,
 				"MemberCategory": "Developer",
@@ -3480,8 +3480,7 @@
 				"574eb85c245977648157eec3": true,
 				"57371f2b24597761224311f1": true,
 				"5ac4c50d5acfc40019262e87": true,
-				"5645bc214bdc2d363b8b4571": true,
-				"EZSHOP2510": true
+				"5645bc214bdc2d363b8b4571": true
 			},
 			"ConditionCounters": {
 				"Counters": []

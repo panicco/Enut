@@ -1,6 +1,6 @@
 # EmuTarkov - modded by TheMaoci version 0.6
 Escape From Tarkov backend emulator written in JS.
-themaoci: i copy all code from polivilas 
+themaoci: i copy base code from polivilas + extends it abit ;)
 
 # ChangeLog:
 # V0.6
@@ -13,7 +13,7 @@ themaoci: i copy all code from polivilas
  * trader Jeager - has unreleased items will add more later
 - login changes - use email/name as specified below to get access to premaded accounts
  * by default game uses maoci folder
- * more added: name, name2, name3, nameru, russ (if u want to add more just copy paste one of listed there folders and change name)
+ * more added: name, name2, name3, nameru, windel (if u want to add more just copy paste one of listed there folders and change name)
  * now i dont use client/game for storing login data it has been moved to profile folder
 - starting fixing examine
 - non released weapons added into global items list
@@ -62,3 +62,9 @@ CC BY-NC-SA 3.0 ( https://creativecommons.org/licenses/by-nc-sa/3.0/ )
 
 # Base Version - Creator 
 ( https://github.com/polivilas/EmuTarkov ) by polivilas
+
+# Thanks to:
+- Windel
+- MrRuss
+- Polivilas
+- Йурасзка ( for testing and nice ideas )
