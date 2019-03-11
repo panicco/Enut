@@ -1,8 +1,25 @@
-# EmuTarkov - modded by TheMaoci version 0.2
+# EmuTarkov - modded by TheMaoci version 0.6
 Escape From Tarkov backend emulator written in JS.
 themaoci: i copy all code from polivilas 
 
-# changelog:
+# ChangeLog:
+# V0.6
+- fixed trader buying / attachments adding to bought gun - polivilas performance script
+- fixed deleting items with childs - by polivilas
+- TRADERS:
+ * traders icons now working and will be automaticly added into temp folder
+ * trader Polivilas - has every item ingame (all accesable)
+ * trader TheMaoci - has all guns, magazines, ammo (with premaded guns to use)
+ * trader Jeager - has unreleased items will add more later
+- login changes - use email/name as specified below to get access to premaded accounts
+ * by default game uses maoci folder
+ * more added: name, name2, name3, nameru, russ (if u want to add more just copy paste one of listed there folders and change name)
+ * now i dont use client/game for storing login data it has been moved to profile folder
+- starting fixing examine
+- non released weapons added into global items list
+- some bugs apear in switching levels from none to crown ( its been causing because "loyal_level_items": {} not added to trader)
+
+# V0.2
 - rewrited trader implementations:
   * using recursive attachments assignation
   * traders are readed from client/trading/api/<folder>/<TraderID>.json
