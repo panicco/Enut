@@ -363,8 +363,8 @@ function getTradersInfo(url){
 }
 
 function prepareRandomBot(body){
-
-	return ReadJson('client/game/bot/bot_generate2.json');//use premaded bots for now still working on creating
+	//use premaded bots for now still working on creating
+	return ReadJson('client/game/bot/bot_generate2.json');
 	//have an error with reading created data like this
 	if(body != "{}")
 	var BODY = JSON.parse(body);
@@ -424,7 +424,7 @@ function handleRequest(req, body, url) {
 		FinalOutput = '{"err":0, "errmsg":null, "data":[]}';
 		return;
 	}
-// well known events handler
+	// well known events handler
 	switch(url) {
 		case "/":
 			FinalOutput = 'EFT backend emulator for Escape From Tarkov version 0.11.2.2680 by polivilas @ UnKnoWnCheaTs.me';
@@ -579,57 +579,35 @@ server.on('request', function(req, resp) {
 //Start the server
 server.listen(PORT, function() {
 	console.log('EFTPriv-> port:%s <- made by: polivilas / moded by: TheMaoci',PORT);
-	console.log('default: name <-> will use this folder if not put any name in login');
+	console.log('default: maoci <-> will use this folder if not put any name in login');
 	//We starting to adds images of new traders if not exists in Tarkov temp files
-	var images = ["jaeger.jpg","polivilas.jpg","themaoci.jpg"];
-	var direcotry = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\files\\trader\\avatar\\";
-	//fix for non existed directory - dirty code not shorted yet
-var fc = require('fs')
-var dirTest_1 = process.env.TEMP + "\\Battlestate Games\\";
-var dirTest_2 = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\";
-var dirTest_3 = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\files\\";
-var dirTest_4 = process.env.TEMP + "\\Battlestate Games\\EscapeFromTarkov\\files\\trader\\";
-if (!fc.existsSync(dirTest_1)){
-    fc.mkdirSync(dirTest_1);
-}
-if (!fc.existsSync(dirTest_2)){
-    fc.mkdirSync(dirTest_2);
-}
-if (!fc.existsSync(dirTest_3)){
-    fc.mkdirSync(dirTest_3);
-}
-if (!fc.existsSync(dirTest_4)){
-    fc.mkdirSync(dirTest_4);
-}
-if (!fc.existsSync(direcotry)){
-    fc.mkdirSync(direcotry);
-}
-	const fs = require('fs'); const fs2 = require('fs');
-		fs.access(direcotry + images[0], fs.F_OK, (err) => {
+	//**Variable preparations
+	const testExist = require('fs'), testCopy = require('fs');
+	var testDir = require('fs');
+	var img = [], dirTest = [];;
+	//images for test and copy if needed - located in ./server/files folder
+	img[0] = "jaeger.jpg";img[1] = "polivilas.jpg";img[2] = "themaoci.jpg";
+	//dir for temp BSG folder
+	dirTest[0] = process.env.TEMP + "\\Battlestate Games\\";
+	dirTest[1] = dirTest[0] + "EscapeFromTarkov\\";
+	dirTest[2] = dirTest[1] + "files\\";
+	dirTest[3] = dirTest[2] + "trader\\";
+	dirTest[4] = dirTest[3] + "avatar\\";
+	//**Functions starts
+	for(var key in dirTest){
+		if (!testDir.existsSync(dirTest[key])){
+		testDir.mkdirSync(dirTest[key]);
+		}
+	}
+	for (let key2 in img){
+		testExist.access(dirTest[4] + img[key2], testExist.F_OK, (err) => {
 		  if (err) {
-			console.error("File not found Copying File " + images[0]);
-				fs2.copyFile('./files/' + images[0], direcotry + images[0], (err) => {
+			console.error("File not found Copying File " + img[key2]);
+				testCopy.copyFile('./files/' + img[key2], dirTest[4] + img[key2], (err) => {
 					if (err) throw err;
 				});
 			return
 		  }
 		});
-		fs.access(direcotry + images[1], fs.F_OK, (err) => {
-		  if (err) {
-			console.error("File not found Copying File " + images[1]);
-				fs2.copyFile('./files/' + images[1], direcotry + images[1], (err) => {
-					if (err) throw err;
-				});
-			return
-		  }
-		});
-		fs.access(direcotry + images[2], fs.F_OK, (err) => {
-		  if (err) {
-			console.error("File not found Copying File " + images[2]);
-				fs2.copyFile('./files/' + images[2], direcotry + images[2], (err) => {
-					if (err) throw err;
-				});
-			return
-		  }
-		});
-	});
+	}
+});
