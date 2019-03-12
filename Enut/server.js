@@ -374,7 +374,7 @@ function prepareRandomBot(body){
 	var maxIndex = botTable.database.length;
 	var out='{"err": 0,"errmsg": null,"data": [';
 	for (var n in BODY.conditions){
-		for(var j = 1; j <= BODY.conditions[n].Limit; j++){
+		for(var j = 0; j < BODY.conditions[n].Limit; j++){
 			var index = getRandomInt(0, maxIndex-1);
 			var tempTable = botTable.database[index];
 			var hash_eq = tempTable.Inventory.equipment;
