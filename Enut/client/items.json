@@ -89476,6 +89476,125 @@
 				"BlocksArmorVest": false
 			}
 		},
+		"MaociPoketsVersion1": {
+			"_id": "MaociPoketsVersion1",
+			"_name": "Pokets From Maoci",
+			"_parent": "557596e64bdc2dc2118b4571",
+			"_type": "Item",
+			"_props": {
+				"Name": "Pockets",
+				"ShortName": "Pockets",
+				"Description": "Pockets",
+				"Weight": 1,
+				"BackgroundColor": "default",
+				"Width": 2,
+				"Height": 3,
+				"StackMaxSize": 1,
+				"Rarity": "Not_exist",
+				"SpawnChance": 50,
+				"CreditsPrice": 100,
+				"ItemSound": "generic",
+				"Prefab": {
+					"path": "",
+					"rcid": ""
+				},
+				"UsePrefab": {
+					"path": "",
+					"rcid": ""
+				},
+				"StackObjectsCount": 1,
+				"NotShownInSlot": true,
+				"ExaminedByDefault": true,
+				"ExamineTime": 1,
+				"IsUndiscardable": false,
+				"IsUnsaleable": false,
+				"IsUnbuyable": false,
+				"IsUngivable": false,
+				"IsLockedafterEquip": false,
+				"QuestItem": false,
+				"LootExperience": 20,
+				"ExamineExperience": 10,
+				"HideEntrails": true,
+				"RepairCost": 0,
+				"RepairSpeed": 0,
+				"ExtraSizeLeft": 0,
+				"ExtraSizeRight": 0,
+				"ExtraSizeUp": 0,
+				"ExtraSizeDown": 0,
+				"ExtraSizeForceAdd": false,
+				"MergesWithChildren": false,
+				"BannedFromRagfair": false,
+				"ConflictingItems": [],
+				"FixedPrice": false,
+				"Unlootable": false,
+				"UnlootableFromSlot": "",
+				"UnlootableFromSide": [],
+				"ChangePriceCoef": 1,
+				"AllowSpawnOnLocations": [],
+				"SendToClient": false,
+				"Grids": [
+					{
+						"_name": "pocket1",
+						"_id": "MaociPoket01",
+						"_parent": "MaociPoketsVersion1",
+						"_props": {
+							"filters": [],
+							"cellsH": 1,
+							"cellsV": 2,
+							"minCount": 0,
+							"maxCount": 0,
+							"maxWeight": 0
+						},
+						"_proto": "55d329c24bdc2d892f8b4567"
+					},
+					{
+						"_name": "pocket2",
+						"_id": "MaociPoket02",
+						"_parent": "MaociPoketsVersion1",
+						"_props": {
+							"filters": [],
+							"cellsH": 1,
+							"cellsV": 2,
+							"minCount": 0,
+							"maxCount": 0,
+							"maxWeight": 0
+						},
+						"_proto": "55d329c24bdc2d892f8b4567"
+					},
+					{
+						"_name": "pocket3",
+						"_id": "MaociPoket03",
+						"_parent": "MaociPoketsVersion1",
+						"_props": {
+							"filters": [],
+							"cellsH": 1,
+							"cellsV": 1,
+							"minCount": 0,
+							"maxCount": 0,
+							"maxWeight": 0
+						},
+						"_proto": "55d329c24bdc2d892f8b4567"
+					},
+					{
+						"_name": "pocket4",
+						"_id": "MaociPoket04",
+						"_parent": "MaociPoketsVersion1",
+						"_props": {
+							"filters": [],
+							"cellsH": 1,
+							"cellsV": 1,
+							"minCount": 0,
+							"maxCount": 0,
+							"maxWeight": 0
+						},
+						"_proto": "55d329c24bdc2d892f8b4567"
+					}
+				],
+				"Slots": [],
+				"SearchSound": "looting_body_extended",
+				"BlocksArmorVest": false
+			}
+		},
 		"592c2d1a86f7746dbe2af32a": {
 			"_id": "592c2d1a86f7746dbe2af32a",
 			"_name": "ana_tactical",

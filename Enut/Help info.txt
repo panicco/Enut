@@ -1,0 +1,1 @@
+->/client/match/group/status {"location":"factory4_day","savage":false,"dt":"CURR"}

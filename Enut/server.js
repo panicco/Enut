@@ -538,6 +538,7 @@ server.on('request', function(req, resp) {
 						console.log(error);
 					} else {
 						handleRequest(req, body.toString(), req.url);
+						DisplayStatus(req.url,body)
 						if (FinalOutput == "DEAD") {
 							resp.writeHead(301, 
 								{Location: 'http://prod.escapefromtarkov.com'+req.url}
