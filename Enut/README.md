@@ -25,10 +25,11 @@ themaoci: i copy base code from polivilas first version + extends it abit ;) add
  * trader Jeager - has unreleased items will add more later
 - login changes - use email/name as specified below to get access to premaded accounts
  * by default game uses maoci folder
- * more added: name, name2, name3, nameru, windel (if u want to add more just copy paste one of listed there folders and change name)
+ * more added: name, name2, name3, nameru, windel (if u want to add more use clearProfile.7z)
  * now i dont use client/game for storing login data it has been moved to profile folder
 - starting fixing examine
 - non released weapons added into global items list (aka new items.json)
+- better setID(0 function with date and random int as specified in older changelog
 - some bugs apear in switching levels from none to crown ( its been causing because "loyal_level_items": {} not added to trader)
 
 # V0.2 - V0.5
@@ -36,7 +37,7 @@ themaoci: i copy base code from polivilas first version + extends it abit ;) add
 - rewrited trader implementations:
   * using recursive attachments assignation
   * traders are readed from client/trading/api/<folder>/<TraderID>.json
-  * unable to implement greater than 1 lvl items cuz no dump of it need to be dumped from character with all maxed out (?retry=<1-4> - means level)
+  * unable to implement greater than 1 lvl items cuz no dump of it need to be dumped from character with all maxed out (?retry=<1-4> - means retryies of retrived data meh...)
 - abit changed console display to be more cleared using DisplayStatus(url,body) to display status and data
 - some basic functions added like setID() with greater ID increased to 999999999 to lower changes of hitting same id (you can add date like 10012019<randomint> to be more sure it will not 
 - rework file placement
