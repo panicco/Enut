@@ -17,7 +17,7 @@ var prices = new RegExp('/client/trading/api/getUserAssortPrice/([a-z0-9])+', 'i
 var getTrader = new RegExp('/client/trading/api/getTrader/', 'i');
 var traderImg = new RegExp('/files/([a-z0-9/\.jpng])+', 'i');
 var content = new RegExp('/uploads/([a-z0-9/\.jpng_])+', 'i');
-var retry = new RegExp("\?retry=\d+", 'i');
+var retry = new RegExp('/?retry=\d+', 'i');
 var pushNotifier = new RegExp('/push/notifier/get/', 'i');
 var LoginName = "maoci";
 var playerListJson = "client/profile/" + LoginName + "/list.json";
@@ -621,7 +621,17 @@ server.on('request', function(req, resp) {
 //Start the server
 server.listen(PORT, function() {
 	console.log('EFTPriv-> port:%s <- made by: polivilas / moded by: TheMaoci',PORT);
-	console.log('default: maoci <-> will use this folder if not put any name in login');
+	var profilesAvailable = require('fs');
+	var Folders = profilesAvailable.readdirSync('.\\client\\profile\\');
+	var Pnames = "";
+	for(var i in Folders){
+		if(Pnames != "")
+			Pnames = Pnames + " / " + Folders[i];
+		else
+			Pnames = Pnames + Folders[i];
+	}
+	console.log('default: maoci <-> or you can use profiles listed below.');
+	console.log(Pnames);
 	//We starting to adds images of new traders if not exists in Tarkov temp files
 	//**Variable preparations
 	const testExist = require('fs'), testCopy = require('fs');

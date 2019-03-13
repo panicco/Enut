@@ -453,9 +453,9 @@
 				]
 			},
 			"5704e4dad2720bb55b8b4567": {
-				"Enabled": true,
-				"Locked": false,
-				"Insurance": true,
+				"Enabled": false,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Lighthouse",
 				"Description": "The lighthouse at Cape Dalniy used to be an important strategic point of the city. At the outbreak of the conflict, USEC used it as a landing zone, thus attracting the attention of BEAR troops that aimed to reduce the hostile PMC presence to zero. ",
 				"Scene": {
@@ -572,8 +572,8 @@
 			},
 			"5704e64ad2720bb55b8b456e": {
 				"Enabled": false,
-				"Locked": false,
-				"Insurance": true,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Private Sector",
 				"Description": "Private residential sector, built up with cottages of the upper-class citizens of Tarkov. In the first weeks of emerging chaos it served as a refugee staging camp, but has become a known scavenger haunt afterwards.",
 				"Scene": {
@@ -690,8 +690,8 @@
 			},
 			"5704e5fad2720bc05b8b4567": {
 				"Enabled": false,
-				"Locked": false,
-				"Insurance": true,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Reserve Base",
 				"Description": "The secret Federal State Reserve Agency base that, according to urban legends, contains enough supplies to last for years: food, medications and other resources, enough to survive an all-out nuclear war.",
 				"Scene": {
@@ -1248,9 +1248,9 @@
 				"BossLocationSpawn": []
 			},
 			"5714dc342459777137212e0b": {
-				"Enabled": true,
-				"Locked": false,
-				"Insurance": true,
+				"Enabled": false,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Suburbs",
 				"Description": "Suburbs and commuter areas of Tarkov with all the communications and infrastructure necessary for long and happy life. ",
 				"Scene": {
@@ -1366,9 +1366,9 @@
 				"BossLocationSpawn": []
 			},
 			"5714dc692459777137212e12": {
-				"Enabled": true,
-				"Locked": false,
-				"Insurance": true,
+				"Enabled": false,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Streets of Tarkov",
 				"Description": "The downtown Tarkov with banks, malls, hotels and all the other things a striving modern city could have needed.",
 				"Scene": {
@@ -1484,9 +1484,9 @@
 				"BossLocationSpawn": []
 			},
 			"5704e5a4d2720bb45b8b4567": {
-				"Enabled": true,
-				"Locked": false,
-				"Insurance": true,
+				"Enabled": false,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Terminal",
 				"Description": "A large section of the harbour zone, rumoured to be the backup Emercom extraction point. ",
 				"Scene": {
@@ -1609,9 +1609,9 @@
 				"BossLocationSpawn": []
 			},
 			"5704e47ed2720bb35b8b4568": {
-				"Enabled": true,
-				"Locked": false,
-				"Insurance": true,
+				"Enabled": false,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Town",
 				"Description": "The Verkhneye urban settlement is a small town by the seaside, favoured by locals as an exceptional gardening and outdoor recreation spot.",
 				"Scene": {
@@ -2765,8 +2765,8 @@
 			},
 			"56db0b3bd2720bb0678b4567": {
 				"Enabled": false,
-				"Locked": false,
-				"Insurance": true,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Arena",
 				"Description": "A makeshift arena for gladiator fights, redesigned by remaining locals out of Equator-2 shopping mall.",
 				"Scene": {
@@ -3136,7 +3136,7 @@
 				"BotImpossible": 0,
 				"BotAssault": 0,
 				"BotMarksman": 0,
-				"DisabledScavExits": "Cellars,Gate 0",
+				"DisabledScavExits": "Cellars,Gate 0,Gate 3",
 				"MinMaxBots": [],
 				"BotLocationModifier": {
 					"AccuracySpeed": 0.8,
@@ -3513,8 +3513,8 @@
 			},
 			"599319c986f7740dca3070a6": {
 				"Enabled": false,
-				"Locked": false,
-				"Insurance": true,
+				"Locked": true,
+				"Insurance": false,
 				"Name": "Hideout",
 				"Description": "The Hideout",
 				"Scene": {

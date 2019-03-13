@@ -11,7 +11,7 @@
 			"Incoming package": "Incoming package",
 			"DEPLOYING ON LOCATION": "DEPLOYING TO LOCATION",
 			"Unknown reward": "Unknown Reward",
-			"Escape from Tarkov": "MaociIt Ru",
+			"Escape from Tarkov": "MaociIt",
 			"The Time has Come": "THE TIME HAS COME",
 			"Headshot": "Headshot",
 			"Prepare for Escape": "PREPARE TO ESCAPE",
@@ -27,7 +27,7 @@
 			"TIMESTAMP": "TIME",
 			"FACTION": "FACTION",
 			"LeaveDialog": "{0} has left the chat.",
-			"SplashHeader": "2017 Battlestate Games a.s. Escape from Tarkov and Battlestate Games are registered trademarks of Battlestate Games LIMITED a.s. All rights reserved.",
+			"SplashHeader": "No Nikita here go search somewhere else",
 			"LVLKILLLIST": "LVL",
 			"Trader can't buy this item": "The merchant can't buy this item",
 			"AddUserToDialog": "{0} has joined the chat.",
@@ -264,7 +264,7 @@
 			"Beginning": "Beginning",
 			"SOUND ON": "SOUND ON",
 			"Start": "Start",
-			"{0} Beta version": "{0} Beta version",
+			"{0} Beta version": "{0} Stupid Version",
 			"Extraction in {0:F1}": "Extraction in {0:F1}",
 			"Select USEC Character": "You are an operator for USEC, an offshore-established PMC, employed by Terra Group Labs as a security subcontractor. The primary objective for USEC was to destroy any evidence of any potentially illegitimate activity by its employer and protect its property from being captured by BEAR, the PMC hired by the Russian government to investigate the Terra Group's operations.",
 			"Attention! You’ve left the raid and lost everything you brought or found in it.": "Attention! You’ve left the raid and lost everything you brought or found in it.",
@@ -13406,7 +13406,7 @@
 				"Location": "Tarkov's central market",
 				"Description": "He worked as a director in big market located in Tarkov's suburb. Sells everything about clothing and gear."
 			},
-			"5c0647fdd443bc2504c2d371": {
+			"jeagerTrader": {
 				"FullName": "Kharitonov Ivan Egorovich",
 				"FirstName": "Ivan Kharitonov",
 				"Nickname": "Jaeger",
