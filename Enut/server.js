@@ -4,7 +4,7 @@ var fs = require('fs');
 var zlib = require('zlib');
 var server = http.createServer();
 var FinalOutput = "";
-var tmpTrader = "{}";
+var tmpTrader = "";
 var LoginData = {};
 var ItemOutput = "";
 var tmpItem = {};
@@ -119,53 +119,37 @@ function handleMoving(body) {
 	var tmpList = JSON.parse(ReadJson(playerListJson));
 	switch(body.Action) {
 		case "QuestAccept":
-			tmpList.data[1].Quests.push({"qid": body.qid.toString(), "startTime": 1337, "status": 2}); // statuses seem as follow - 1 - not accepted | 2 - accepted | 3 - failed | 4 - completed
+			tmpList.data[1].Quests.push({"qid": body.qid.toString(), "startTime": Date.now(), "status": 2}); // statuses seem as follow - 1 - not accepted | 2 - accepted | 3 - failed | 4 - completed
 			fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
 			FinalOutput = "OK";
 			break;
-		case "Examine"://non performant script just go through all possible places and scan it in search for _id of item searching
-			var traders = []
-			traders[0]  = "client/trading/api/getTraderAssort/5a7c2eca46aef81a7ca2145d.json";
-			traders[1]  = "client/trading/api/getTraderAssort/5ac3b934156ae10c4430e83c.json";
-			traders[2]  = "client/trading/api/getTraderAssort/5c0647fdd443bc2504c2d371.json";
-			traders[3]  = "client/trading/api/getTraderAssort/54cb50c76803fa8b248b4571.json";
-			traders[4]  = "client/trading/api/getTraderAssort/54cb57776803fa99248b456e.json";
-			traders[5]  = "client/trading/api/getTraderAssort/59c0ea2130c28d455c92e892.json";
-			traders[6]  = "client/trading/api/getTraderAssort/579dc571d53a0658a154fbec.json";
-			traders[7]  = "client/trading/api/getTraderAssort/5935c25fb3acc3127c3d8cd9.json";
-			traders[8]  = "client/trading/api/getTraderAssort/58330581ace78e27b8b10cee.json";
-			traders[9]  = "client/trading/api/getTraderAssort/jeagerTrader.json";
-			traders[10] = "client/trading/api/getTraderAssort/MasterMaoci.json";
-			traders[11] = "client/trading/api/getTraderAssort/polivilasTrader.json";
-			var playerInventory = ReadJson(playerListJson);
-			playerInventory = playerInventory[1].Inventory.items;
-			
+		case "Examine"://done by Maoci
 			var ReturnedID = "BAD";
-			for (var key01 in traders){
-				var SearchTable = ReadJson(traders[key01]);
-				SearchTable = SearchTable.items;
-				for (var key02 in SearchTable){
-					if(SearchTable[key02]._id == body.item){
-						ReturnedID = SearchTable[key02]._tpl;
+			//Start searching in trader first (players like to examine things in traders
+			if(tmpTrader){
+				for (var keyTrader in tmpTrader.data){
+					if(tmpTrader.data[keyTrader]._id == body.item){
+						console.log("} found trader with examined item: " + tmpTrader.data[keyTrader]._id);
+						ReturnedID = tmpTrader.data[keyTrader]._tpl;
 						break
 					}
 				}
-				if(ReturnedID != "BAD")
-					break;
 			}
-			if(ReturnedID != "BAD"){
-				for(var key03 in playerInventory){
-					if(playerInventory[key03]._id == body.item){
-							ReturnedID = playerInventory[key03]._tpl;
-							break
+			if(ReturnedID == "BAD"){
+				for(var key03 in tmpList.data[1].Inventory.items){
+					if(tmpList.data[1].Inventory.items[key03]._id == body.item){
+						console.log("found equipment examing item: " + tmpList.data[1].Inventory.items[key03]._id);
+						ReturnedID = tmpList.data[1].Inventory.items[key03]._tpl;
+						break
 					}
 				}
 			}
 			if(ReturnedID != "BAD"){
-			tmpList.data[1].Encyclopedia[ReturnedID] = true;
-			fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
+				console.log("EXAMINED: " + ReturnedID);
+				//tmpList.data[1].Encyclopedia[ReturnedID] = true;
+				//fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
 			} else {
-				console.log("Cannot find Proper item. Stop ading to Encyclopedia");
+				console.log("Cannot find proper item. Stopped.");
 			}
 			FinalOutput = "OK";
 			break;
@@ -189,7 +173,6 @@ function handleMoving(body) {
 			break;
 		case "Remove"://fix from polivilas
 				toDo = [body.item];
-				console.log(">> Deleting Event Start");
 				while(true){
 					if(toDo[0] != undefined){
 						while(true){ // needed else iterator may decide to jump over stuff
@@ -199,7 +182,7 @@ function handleMoving(body) {
 									ItemOutput.data.items.del.push({"_id": tmpList.data[1].Inventory.items[tmpKey]._id});
 									toDo.push(tmpList.data[1].Inventory.items[tmpKey]._id);
 									tmpList.data[1].Inventory.items.splice(tmpKey, 1);
-									console.log("Deleted: "+ tmpKey);
+									//console.log("Deleted: " + tmpList.data[1].Inventory.items[tmpKey]._id);
 									tmpEmpty = "no";
 								}
 							}
@@ -213,7 +196,6 @@ function handleMoving(body) {
 					break;
 				}
 				fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
-				console.log(">> Deleting Event Ends");
 				FinalOutput = "OK";
 			break;
 		case "Split":

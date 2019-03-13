@@ -5,6 +5,8 @@ themaoci: i copy base code from polivilas first version + extends it abit ;) add
 
 # ChangeLog:
 # V0.6
+- Polivilas Trader - deleted not preset weapons magazines and ammo (all displayed in TheMaoci Trader with preset weapons)
+- _MAOCI_deleteItemsFromTrader.bat - this deletes items from ToDelete/list.json from player profile and trader 
 - disable not working maps from locations.json
 - folder "files" stores now all traders icons
 - added "Help info.txt" to insert there informations i will need in the future
