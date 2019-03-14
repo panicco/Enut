@@ -42,11 +42,11 @@ const getScript = (url) => {
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
 	var botType 	= "marksman";
-	var botDiff 	= "hard";
+	var botDiff 	= "impossible";
 	var isBoss		= false;
 	var BossName	= "cykaBlyat"
 	var toConsole	= false;
-	var saveSingle	= true;
+	var saveSingle	= false;
 	// ---------------^^^^^^^^^^^--CHANGE THIS VALUES DEPENDS ON BOT
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
@@ -63,7 +63,7 @@ profileList = profileList.data[1];
 var out='';
 			var randomID = setID();
 			var UniqID = "bot_" + botType + "_" + botDiff + "" + randomID.substr(randomID.length - 5);
-			console.log(UniqID);
+			//console.log(UniqID);
 			var hash_eq = profileList.Inventory.equipment;
 			var hash_st = profileList.Inventory.stash;
 			var hash_qr = profileList.Inventory.questRaidItems;
@@ -77,17 +77,17 @@ var out='';
 			profileList.Inventory.questRaidItems = new_hash_qr;
 			profileList.Inventory.questStashItems = new_hash_qs;
 			var prepareInventory = JSON.stringify(profileList.Inventory);
-			console.log(prepareInventory);
+			//console.log(prepareInventory);
 			prepareInventory = prepareInventory.replace(hash_eq, new_hash_eq).replace(hash_st, new_hash_st).replace(hash_qr, new_hash_qr).replace(hash_qs, new_hash_qs);
 			out += '{"_id": "' + UniqID + '", "aid": 0,"savage": null,"Info": {' + 
 			'"Nickname": "' + botName + '","LowerNickname": "","Side": "Savage","Voice": "' + profileList.Info.Voice + '","Level": 1,"Experience": 0,"RegistrationDate": 0,"GameVersion": "","AccountType": 0,"MemberCategory": 0,"lockedMoveCommands": false,"LastTimePlayedAsSavage": 0,' + 
 			'"Settings":{"Role": "' + botType + '","BotDifficulty": "' + botDiff + '","Experience": -1},"NeedWipe": false,"GlobalWipe": false,"NicknameChangeDate": 0},' + 
 			'"Customization": ' + JSON.stringify(profileList.Customization) + ', ' + '"Health": ' + JSON.stringify(profileList.Health) + ',"Inventory": ' + prepareInventory + ',"Skills": {"Common": null,"Mastering": [],"Points": 0},"Stats": {"SessionCounters": {"Items": []},"OverallCounters": {"Items": []}},"Encyclopedia": null,"ConditionCounters": {"Counters": []}, "BackendCounters": {},"InsuredItems": []}';
-			out += ']}';
+			//out += ']}';
 	if(saveSingle)
 		outJson = out;
 	else
-		outJson = ((outJson != "")?(outJson + ", "):"") + out
+		outJson = ((outJson != "")?(outJson + ",\n "):"") + out
 	if(toConsole)
 		console.log(out);
 	else

@@ -21,6 +21,7 @@ var retry = new RegExp('/?retry=\d+', 'i');
 var pushNotifier = new RegExp('/push/notifier/get/', 'i');
 var LoginName = "maoci";
 var playerListJson = "client/profile/" + LoginName + "/list.json";
+var LocationForBots = "";
 var ItemOutput = "";
 var stashX = 10; // fix for your stash size
 var stashY = 66; // ^ if you edited it ofc
@@ -138,7 +139,7 @@ function handleMoving(body) {
 			if(ReturnedID == "BAD"){
 				for(var key03 in tmpList.data[1].Inventory.items){
 					if(tmpList.data[1].Inventory.items[key03]._id == body.item){
-						console.log("found equipment examing item: " + tmpList.data[1].Inventory.items[key03]._id);
+					console.log("} found equipment examing item: " + tmpList.data[1].Inventory.items[key03]._id);
 						ReturnedID = tmpList.data[1].Inventory.items[key03]._tpl;
 						break
 					}
@@ -146,8 +147,8 @@ function handleMoving(body) {
 			}
 			if(ReturnedID != "BAD"){
 				console.log("EXAMINED: " + ReturnedID);
-				//tmpList.data[1].Encyclopedia[ReturnedID] = true;
-				//fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
+				tmpList.data[1].Encyclopedia[ReturnedID] = true;
+				fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
 			} else {
 				console.log("Cannot find proper item. Stopped.");
 			}
@@ -387,6 +388,10 @@ function getTradersInfo(url){
 
 function prepareRandomBot(body){
 	//use premaded bots for now still working on creating
+	var response="";
+	if(LocationForBots != "")
+	return ReadJson('client/game/bot/' + LocationForBots + '.json');
+	else 
 	return ReadJson('client/game/bot/bot_generate2.json');
 	//have an error with reading created data like this
 	if(body != "{}")
@@ -453,9 +458,12 @@ function handleRequest(req, body, url) {
 			FinalOutput = 'EFT backend emulator for Escape From Tarkov version 0.11.2.2680 by polivilas @ UnKnoWnCheaTs.me';
 			break;
 		case "/favicon.ico":
-		case "/client/match/group/status":
 		case "/client/match/group/looking/stop":
 		case "/client/match/group/exit_from_menu":
+			break;
+		case "/client/match/group/status":
+			console.log(body);
+			body.location;
 			break;
 		case "/client/friend/list":
 			FinalOutput = '{"err":0, "errmsg":null, "data":{"Friends":[], "Ignore":[], "InIgnoreList":[]}}';
@@ -566,7 +574,7 @@ server.on('request', function(req, resp) {
 							resp.writeHead(301, 
 								{Location: 'http://prod.escapefromtarkov.com'+req.url}
 							);
-							console.log("Redirecting");
+							console.log("Redirecting: "+req.url);
 							resp.end();
 							return;
 						}
@@ -586,7 +594,7 @@ server.on('request', function(req, resp) {
 			resp.writeHead(301, 
 				{Location: 'http://prod.escapefromtarkov.com'+req.url}
 			);
-			console.log("Redirecting");
+			console.log("Redirecting: "+req.url);
 			resp.end();
 			return;
 		}

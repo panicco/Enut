@@ -1,1 +1,8 @@
-->/client/match/group/status {"location":"factory4_day","savage":false,"dt":"CURR"}
+->/client/match/group/status 
+{"location":"factory4_day","savage":false,"dt":"CURR"}
+{"location":"factory4_night","savage":false,"dt":"PAST"}
+{"location":"bigmap","savage":false,"dt":"CURR"}
+{"location":"Interchange","savage":false,"dt":"PAST"}
+{"location":"Shoreline","savage":false,"dt":"CURR"}
+{"location":"Woods","savage":false,"dt":"CURR"}
+{"location":"laboratory","savage":false,"dt":"PAST"}
