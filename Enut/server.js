@@ -454,7 +454,7 @@ function handleRequest(req, body, url) {
 		return;
 	}
 	// well known events handler
-	switch(url) {a
+	switch(url) {
 		case "/":
 			FinalOutput = 'EFT backend emulator for Escape From Tarkov version 0.11.2.2680 by polivilas @ UnKnoWnCheaTs.me';
 			break;

@@ -1589,12 +1589,13 @@
 					{
 						"_id": "1552590678537687257",
 						"_tpl": "56e294cdd2720b603a8b4575",
-						"parentId": "5c71b934354682353958e9d7",
-						"slotId": "Backpack",
+						"parentId": "5c71b934354682353958ea35",
+						"slotId": "hideout",
 						"location": {
 							"x": 0,
-							"y": 0,
-							"r": 0
+							"y": 7,
+							"r": "Horizontal",
+							"isSearched": true
 						},
 						"upd": {
 							"StackObjectsCount": 1
