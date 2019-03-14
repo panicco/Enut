@@ -389,6 +389,7 @@ function getTradersInfo(url){
 function prepareRandomBot(body){
 	//use premaded bots for now still working on creating
 	var response="";
+	console.log(LocationForBots);
 	if(LocationForBots != "")
 	return ReadJson('client/game/bot/' + LocationForBots + '.json');
 	else 
@@ -453,7 +454,7 @@ function handleRequest(req, body, url) {
 		return;
 	}
 	// well known events handler
-	switch(url) {
+	switch(url) {a
 		case "/":
 			FinalOutput = 'EFT backend emulator for Escape From Tarkov version 0.11.2.2680 by polivilas @ UnKnoWnCheaTs.me';
 			break;
@@ -462,8 +463,9 @@ function handleRequest(req, body, url) {
 		case "/client/match/group/exit_from_menu":
 			break;
 		case "/client/match/group/status":
-			console.log(body);
-			body.location;
+		var NewLocation = JSON.parse(body);
+			console.log(NewLocation.location);
+			LocationForBots = NewLocation.location;
 			break;
 		case "/client/friend/list":
 			FinalOutput = '{"err":0, "errmsg":null, "data":{"Friends":[], "Ignore":[], "InIgnoreList":[]}}';

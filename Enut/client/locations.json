@@ -2690,7 +2690,7 @@
 				"BossLocationSpawn": [
 					{
 						"BossName": "bossBully",
-						"BossChance": 38,
+						"BossChance": 100,
 						"BossZone": "ZoneDormitory,ZoneGasStation",
 						"BossPlayer": false,
 						"BossDifficult": "normal",
