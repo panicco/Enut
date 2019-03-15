@@ -38,22 +38,19 @@ const getScript = (url) => {
 };
 //main script starts here
 (async (url) => {
-	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
-	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
-	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
-	var botType 	= "assault";	// bot type [assault, marksman, pmcBot, Bully, Killa, followerBully]
-	var botDiff 	= "easy";	// bot difficulty [easy, normal, hard, impossible]
-	var randomizeS	= true 			// randomize savage Customizables
-	var isBoss		= false;		// if boss set true (flag)
-	var BossName	= "cykaBlyat"	// if bos selectred will use this name
-	var toConsole	= false;		// dump data to console (only for testing)
-	var saveSingle	= true;		// while dumped again file will be cleared b4 dump
-	// ---------------^^^^^^^^^^^--CHANGE THIS VALUES DEPENDS ON BOT
-	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
-	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
+	
+	var Settings = JSON.parse(ReadJson('Settings.json'));
+	
+	var botType 	= Settings.BotType;
+	var botDiff 	= Settings.BotDifficulty;
+	var randomizeS	= Settings.RandomLookForSavage;
+	var isBoss		= Settings.IsThatBoss;
+	var BossName	= Settings.BossName;
+	var toConsole	= Settings.DumpToConsoleOnly;
+	var saveSingle	= Settings.ClearFileB4dump;
 	console.log("Settings:");
 	console.log("botType = " + botType + " / botDiff = " + botDiff + " / randomizeS= " + randomizeS + " / isBoss = " + isBoss + ((isBoss)?(" / BossName = " + BossName):"") + " / toConsole = " + toConsole + " / saveSingle = " + saveSingle);
-	
+
 // - list of list.jsons	
 	var profilesAvailable = require('fs');
 	var Folders = profilesAvailable.readdirSync('BotProfile/');

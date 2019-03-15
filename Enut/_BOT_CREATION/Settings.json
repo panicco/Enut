@@ -1,0 +1,9 @@
+{
+	"BotType": "assault",
+	"BotDifficulty": "easy",
+	"RandomLookForSavage": true,
+	"IsThatBoss": false,
+	"BossName": "Reshala",
+	"DumpToConsoleOnly": false,
+	"ClearFileB4dump": true
+}
