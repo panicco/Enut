@@ -1,17 +1,19 @@
 # Bot Creation script v0.2
 ###### Script to helps in creation bots
+
 _Folders:_
 ```
 _bots from Йурасзка - contain custom marksman bots (count 5)
 _bots from polivilas - contains base assault bots (count 19)
 ```
 
-you just need to create user profile with equipment and other needed data such as health changes (if any) and customization changes (if any)
-* use "InsuredItems": []}," to add new like \n at the end of it
+- Info:
+  - you just need to create user profile with equipment and other needed data such as health changes (if any) and customization changes (if any)
+  - use `InsuredItems": []},` to add new like `\n` at the end of it
+  - BotProfile -> you put there an list.json from player profile
+  - Start script from file  run.bat
+  - Configuration of bot making located in same directory with name Settings.json
 
-BotProfile -> you put there an list.json from player profile
-Start script from file  run.bat
-Configuration of bot making located in same directory with name Settings.json
 ```
 {
 	"BotType": "assault",
