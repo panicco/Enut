@@ -1,3 +1,10 @@
+/*
+Created by TheMaoci to be unreadable ;) - i mean, i dont use code formating there like, i used to normally 
+it must work not be beauty.
+
+*** Version 0.2 ***
+*/
+
 'use strict'
 var http = require('http');
 var fs = require('fs');
