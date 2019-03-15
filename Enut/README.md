@@ -1,8 +1,9 @@
-##### This version could be broken untill its reach 1.0 version or greater - im live working on it cause of changing places
+
 # EmuTarkov - modded by TheMaoci version 0.6
-##### Escape From Tarkov backend emulator written in JS.
-##### themaoci: i copy base code from polivilas first version + extends it abit ;) 
-##### additionally tries to hold it up to date with polivilas fixes
+##### This version could be broken untill its reach 1.0 version or greater - im live working on it cause of changing places
+Escape From Tarkov backend emulator written in JS.
+TheMaoci: i copy base code from polivilas first version + extends it abit ;) 
+Additionally tries to hold it up to date with polivilas fixes
 
 # ChangeLog:
 ##### V0.6
