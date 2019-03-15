@@ -8,7 +8,9 @@ Additionally tries to hold it up to date with polivilas fixes
 ```
 
 # ChangeLog:
-##### V0.6
+### V0.6 - actual
+- bots catalog changes ( rework presets ) - now woods and factory works with bots
+- some more changes to botcreations
 - Polivilas Trader - deleted not preset weapons magazines and ammo (all displayed in TheMaoci Trader with preset weapons)
 - _MAOCI_deleteItemsFromTrader.bat - this deletes items from ToDelete/list.json from player profile and trader 
 - disable not working maps from locations.json
@@ -38,7 +40,7 @@ Additionally tries to hold it up to date with polivilas fixes
 - better setID(0 function with date and random int as specified in older changelog
 - some bugs apear in switching levels from none to crown ( its been causing because "loyal_level_items": {} not added to trader)
 
-##### V0.2 - V0.5
+### V0.2 - V0.5
 - client/game/bot trying to write automated generation of bots (propably fails but sript is still in code) v0.5
 - rewrited trader implementations:
   * using recursive attachments assignation
