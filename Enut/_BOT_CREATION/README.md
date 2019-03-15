@@ -1,4 +1,4 @@
-# Bot Creation script v0.1
+# Bot Creation script v0.2
 ###### Script to helps in creation bots
 
 you just need to create user profile with equipment and other needed data such as health changes (if any) and customization changes (if any needed)
