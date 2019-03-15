@@ -41,15 +41,19 @@ const getScript = (url) => {
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
-	var botType 	= "marksman";	// bot type
-	var botDiff 	= "impossible";	// bot difficulty
+	var botType 	= "assault";	// bot type [assault, marksman, pmcBot, Bully, Killa, followerBully]
+	var botDiff 	= "easy";	// bot difficulty [easy, normal, hard, impossible]
+	var randomizeS	= true 			// randomize savage Customizables
 	var isBoss		= false;		// if boss set true (flag)
 	var BossName	= "cykaBlyat"	// if bos selectred will use this name
 	var toConsole	= false;		// dump data to console (only for testing)
-	var saveSingle	= false;		// while dumped again file will be cleared b4 dump
+	var saveSingle	= true;		// while dumped again file will be cleared b4 dump
 	// ---------------^^^^^^^^^^^--CHANGE THIS VALUES DEPENDS ON BOT
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
 	// ----------------------------CHANGE THIS VALUES DEPENDS ON BOT
+	console.log("Settings:");
+	console.log("botType = " + botType + " / botDiff = " + botDiff + " / randomizeS= " + randomizeS + " / isBoss = " + isBoss + ((isBoss)?(" / BossName = " + BossName):"") + " / toConsole = " + toConsole + " / saveSingle = " + saveSingle);
+	
 // - list of list.jsons	
 	var profilesAvailable = require('fs');
 	var Folders = profilesAvailable.readdirSync('BotProfile/');
@@ -58,7 +62,23 @@ const getScript = (url) => {
 			listFiles[i] = Folders[i];
 	}
 // finished list
+var count = 0;
 for(var i in listFiles){
+console.log("} Start creating for file: " + listFiles[i])
+	if(randomizeS){
+		//for savages only
+			var voice 	= "Scav_" + getRandomInt(1, 6);
+			var head	= "assets/content/characters/character/prefabs/wild_head_" + getRandomInt(1, 3) + ".bundle";
+		var randomBody = getRandomInt(0, 3);
+			var body	= "assets/content/characters/character/prefabs/wild_body" + ((randomBody == 0)?"":("_" + randomBody)) + ".bundle";
+			var hand	= "assets/content/hands/wild/wild_body" + ((randomBody == 0)?"":("_" + randomBody)) + "_firsthands.bundle";
+		var randomFeets = getRandomInt(0, 2);
+			var legs	= "assets/content/characters/character/prefabs/wild_feet" + ((randomFeets == 0)?"":("_" + randomFeets)) + ".bundle"
+		var prepareCustomization = '{"Head": {"path": "' + head + '","rcid": null},"Body": {"path": "' + body + '","rcid": ""},"Feet": {"path": "' + legs + '","rcid": null},"Hands": {"path": "' + hand + '","rcid": null}},';
+	} else {
+		var voice = "";
+		var prepareCustomization = "";
+	}
 	if(!isBoss){
 		var botName = await getScript('https://uinames.com/api/?gender=male&region=Russia');
 		botName = JSON.parse(botName);
@@ -69,17 +89,16 @@ for(var i in listFiles){
 	var profileList = JSON.parse(ReadJson('BotProfile/' + listFiles[i]));
 	var outJson = ReadJson('Output.json');
 	profileList = profileList.data[1];
-	//delete all from stash not recursive
-	//"slotId": "hideout",
+	//delete all from stash not recursive - bullshit code should be expanded later
 		for (var tmpKey in profileList.Inventory.items) {	
 			if (profileList.Inventory.items[tmpKey].slotId == "hideout") {
 				profileList.Inventory.items.splice(tmpKey, 1);
 			}
 		}
-	//deleted from stash
+	//deleted from stash - "hideout"
 	var out='';
 	var UniqID = "bot_" + botType + "_" + botDiff + "" + setID();
-	//console.log(UniqID);
+
 	var hash_eq = profileList.Inventory.equipment;
 	var hash_st = profileList.Inventory.stash;
 	var hash_qr = profileList.Inventory.questRaidItems;
@@ -92,15 +111,21 @@ for(var i in listFiles){
 	profileList.Inventory.stash = new_hash_st;
 	profileList.Inventory.questRaidItems = new_hash_qr;
 	profileList.Inventory.questStashItems = new_hash_qs;
+
 	var prepareInventory = JSON.stringify(profileList.Inventory);
-	//console.log(prepareInventory);
+
+	if(voice == "")
+		voice = profileList.Info.Voice;
+	if(prepareCustomization == "")
+		prepareCustomization = JSON.stringify(profileList.Customization);
+
 	prepareInventory = prepareInventory.replace(hash_eq, new_hash_eq).replace(hash_st, new_hash_st).replace(hash_qr, new_hash_qr).replace(hash_qs, new_hash_qs);
 	out += '{"_id": "' + UniqID + '", "aid": 0,"savage": null,"Info": {' + 
-	'"Nickname": "' + botName + '","LowerNickname": "","Side": "Savage","Voice": "' + profileList.Info.Voice + '","Level": 1,"Experience": 0,"RegistrationDate": 0,"GameVersion": "","AccountType": 0,"MemberCategory": 0,"lockedMoveCommands": false,"LastTimePlayedAsSavage": 0,' + 
+	'"Nickname": "' + botName + '","LowerNickname": "","Side": "Savage","Voice": "' + voice + '","Level": 1,"Experience": 0,"RegistrationDate": 0,"GameVersion": "","AccountType": 0,"MemberCategory": 0,"lockedMoveCommands": false,"LastTimePlayedAsSavage": 0,' + 
 	'"Settings":{"Role": "' + botType + '","BotDifficulty": "' + botDiff + '","Experience": -1},"NeedWipe": false,"GlobalWipe": false,"NicknameChangeDate": 0},' + 
-	'"Customization": ' + JSON.stringify(profileList.Customization) + ', ' + '"Health": ' + JSON.stringify(profileList.Health) + ',"Inventory": ' + prepareInventory + ',"Skills": {"Common": null,"Mastering": [],"Points": 0},"Stats": {"SessionCounters": {"Items": []},"OverallCounters": {"Items": []}},"Encyclopedia": null,"ConditionCounters": {"Counters": []}, "BackendCounters": {},"InsuredItems": []}';
+	'"Customization": ' + prepareCustomization + ', ' + '"Health": ' + JSON.stringify(profileList.Health) + ',"Inventory": ' + prepareInventory + ',"Skills": {"Common": null,"Mastering": [],"Points": 0},"Stats": {"SessionCounters": {"Items": []},"OverallCounters": {"Items": []}},"Encyclopedia": null,"ConditionCounters": {"Counters": []}, "BackendCounters": {},"InsuredItems": []}';
 	//out += ']}';
-	if(saveSingle)
+	if(saveSingle && count == 0)
 		outJson = out;
 	else
 		outJson = ((outJson != "")?(outJson + ", "):"") + out
@@ -108,5 +133,8 @@ for(var i in listFiles){
 		console.log(out);
 	else
 		fs.writeFileSync('Output.json', outJson, 'utf8');
+	count++;//basic counter ;) - could help to set things up !
 }
+console.log("-> Finished Creation of " + count + " bots.")
+
 })('https://uinames.com/');
