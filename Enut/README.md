@@ -1,10 +1,11 @@
-This version could be broken untill its reach 1.0 version or greater - im live working on it cause of changing places
+##### This version could be broken untill its reach 1.0 version or greater - im live working on it cause of changing places
 # EmuTarkov - modded by TheMaoci version 0.6
-Escape From Tarkov backend emulator written in JS.
-themaoci: i copy base code from polivilas first version + extends it abit ;) additionally tries to hold it up to date with polivilas fixes
+##### Escape From Tarkov backend emulator written in JS.
+##### themaoci: i copy base code from polivilas first version + extends it abit ;) 
+##### additionally tries to hold it up to date with polivilas fixes
 
 # ChangeLog:
-# V0.6
+##### V0.6
 - Polivilas Trader - deleted not preset weapons magazines and ammo (all displayed in TheMaoci Trader with preset weapons)
 - _MAOCI_deleteItemsFromTrader.bat - this deletes items from ToDelete/list.json from player profile and trader 
 - disable not working maps from locations.json
@@ -34,7 +35,7 @@ themaoci: i copy base code from polivilas first version + extends it abit ;) add
 - better setID(0 function with date and random int as specified in older changelog
 - some bugs apear in switching levels from none to crown ( its been causing because "loyal_level_items": {} not added to trader)
 
-# V0.2 - V0.5
+##### V0.2 - V0.5
 - client/game/bot trying to write automated generation of bots (propably fails but sript is still in code) v0.5
 - rewrited trader implementations:
   * using recursive attachments assignation
@@ -64,23 +65,24 @@ themaoci: i copy base code from polivilas first version + extends it abit ;) add
   * weather.json -> weather settings need to be done in a fly
   
   
-# How to use?
+## How to use?
 Run 'install.bat', then run 'run.bat'.
 You will also need to modify one file in your install ->
 Open 'client.config.json' in your EFT folder and change 'https://prod.escapefromtarkov.com' to 'http://localhost:1337'.
 After you done all that, launch the game and enjoy :)
 
-# Contributions
+## Contributions
 All bugfixes/contributions/pull requests welcome.
 
-# LICENSE
+## LICENSE
 CC BY-NC-SA 3.0 ( https://creativecommons.org/licenses/by-nc-sa/3.0/ )
 
-# Base Version - Creator 
+## Base Version - Creator 
 ( https://github.com/polivilas/EmuTarkov ) by polivilas
 
-# Thanks to:
+#### Thanks to:
 - Windel
 - MrRuss
-- Polivilas
+- Polivilas ( as a creator and a great guy )
 - Йурасзка ( for testing and nice ideas )
+- propably UC but who knows
