@@ -121,7 +121,7 @@ console.log("} Start creating for file: " + listFiles[i])
 	if(voice == "")
 		voice = profileList.Info.Voice;
 	if(prepareCustomization == "")
-		prepareCustomization = JSON.stringify(profileList.Customization);
+		prepareCustomization = JSON.stringify(profileList.Customization) + ", ";
 
 	prepareInventory = prepareInventory.replace(hash_eq, new_hash_eq).replace(hash_st, new_hash_st).replace(hash_qr, new_hash_qr).replace(hash_qs, new_hash_qs);
 	out += '{"_id": "' + UniqID + '", "aid": 0,"savage": null,"Info": {' + 
