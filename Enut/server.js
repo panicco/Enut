@@ -5,6 +5,7 @@ var zlib = require('zlib');
 var server = http.createServer();
 var FinalOutput = "";
 var tmpTrader = "";
+var tmpUserTrader = "";
 var LoginData = {};
 var ItemOutput = "";
 var tmpItem = {};
@@ -231,6 +232,7 @@ function handleMoving(body) {
 		case "TradingConfirm":
 			if(body.type == "buy_from_trader") {
 				tmpTrader = JSON.parse('{"err": 0,"errmsg": null,"data": ' + ReadJson('client/trading/api/getTraderAssort/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json') + '}');
+				tmpUserTrader = JSON.parse(ReadJson('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '')));
 				for (var key in tmpTrader.data.items) {
 					if (tmpTrader.data.items[key]._id && tmpTrader.data.items[key]._id == body.item_id) {
 						var Stash2D = Array(stashY).fill(0).map(x => Array(stashX).fill(0));
@@ -289,6 +291,7 @@ function handleMoving(body) {
 									var newItem = setID();
 									ItemOutput.data.items.new.push({"_id": newItem, "_tpl": tmpTrader.data.items[key]._tpl, "parentId": "5c71b934354682353958ea35", "slotId": "hideout", "location": {"x": x, "y": y, "r": 0}, "upd": {"StackObjectsCount": body.count}});
 									tmpList.data[1].Inventory.items.push({"_id": newItem, "_tpl": tmpTrader.data.items[key]._tpl, "parentId": "5c71b934354682353958ea35", "slotId": "hideout", "location": {"x": x, "y": y, "r": 0}, "upd": {"StackObjectsCount": body.count}});
+									tmpUserTrader[newItem] = [[{"_tpl": tmpTrader.data.items[key]._tpl, "count": ((body.scheme_items[0].count > 10)?(body.scheme_items[0].count * 0.8):(body.scheme_items[0].count))}]];
 									toDo = [[tmpTrader.data.items[key]._id, newItem]];
 									while(true){
 										if(toDo[0] != undefined){
@@ -305,6 +308,8 @@ function handleMoving(body) {
 										}
 										break;
 									}
+									
+									fs.writeFileSync('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json', JSON.stringify(tmpUserTrader, null, "\t"), 'utf8');
 									fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
 									FinalOutput = "OK";
 									return;
@@ -317,10 +322,21 @@ function handleMoving(body) {
 			}
 			if(body.type == "sell_to_trader") {
 				//not figure out why i cant sell shit ... // if id exist in trader then i can sell it ..
-				var tmpTrader = JSON.parse('{"err": 0,"errmsg": null,"data": ' + ReadJson('client/trading/api/getTraderAssort/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json') + '}');
+				tmpTrader = JSON.parse('{"err": 0,"errmsg": null,"data": ' + ReadJson('client/trading/api/getTraderAssort/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json') + '}');
+				tmpUserTrader = JSON.parse(ReadJson('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json'));
+				
+				console.log(body);
+				
+				//for()
+				/*
 				for (var key in tmpTrader.data.items) {
 					if (tmpTrader.data.items[key]._id && tmpTrader.data.items[key]._id == body.item_id) {
-						var vall = JSON.parse(tmpTrader.data.items[key].scheme_items);				
+						var vall = JSON.parse(tmpTrader.data.items[key].scheme_items);		
+						tmpUserTrader[]
+						
+						
+						
+						
 					for (var key in body.items){
 						for (var ListKey in tmpList.data[1].Inventory.items) {
 							if(body.items[key].id == tmpList.data[1].Inventory.items[ListKey]._id){
@@ -335,7 +351,9 @@ function handleMoving(body) {
 					}
 				FinalOutput = "OK";
 				return;
-				}
+				}*/
+				FinalOutput = "OK";
+				return;
 			}
 			break;
 		case "Fold":

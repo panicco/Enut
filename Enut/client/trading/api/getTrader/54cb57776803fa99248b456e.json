@@ -36,7 +36,7 @@
 	},
 	"gridHeight": 120,
 	"loyalty": {
-		"currentLevel": 4,
+		"currentLevel": 1,
 		"currentStanding": 0,
 		"currentSalesSum": 4370,
 		"loyaltyLevels": {
@@ -63,6 +63,7 @@
 		}
 	},
 	"sell_category": [
-		"5447e1d04bdc2dff2f8b4567"
+		"5447e1d04bdc2dff2f8b4567",
+		"5c71b934354682353958e9a7"
 	]
 }

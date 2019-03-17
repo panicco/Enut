@@ -801,6 +801,492 @@
 						"upd": {
 							"StackObjectsCount": 9999999
 						}
+					},
+					{
+						"_id": "155267798325048222",
+						"_tpl": "5ac66d015acfc400180ae6e4",
+						"parentId": "5c71b934354682353958e9d7",
+						"slotId": "FirstPrimaryWeapon",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "155267798322632458",
+						"_tpl": "59c6633186f7740cf0493bb9",
+						"parentId": "155267798325048222",
+						"slotId": "mod_gas_block",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552677983279145089",
+						"_tpl": "5ac72e725acfc400180ae701",
+						"parentId": "155267798325048222",
+						"slotId": "mod_muzzle",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552677983331876493",
+						"_tpl": "5649ade84bdc2d1b2b8b4587",
+						"parentId": "155267798325048222",
+						"slotId": "mod_pistol_grip",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552677983131847372",
+						"_tpl": "5ac50da15acfc4001718d287",
+						"parentId": "155267798325048222",
+						"slotId": "mod_reciever",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552677983140590415",
+						"_tpl": "5ac733a45acfc400192630e2",
+						"parentId": "155267798325048222",
+						"slotId": "mod_sight_rear",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552677983447211210",
+						"_tpl": "5ac50c185acfc400163398d4",
+						"parentId": "155267798325048222",
+						"slotId": "mod_stock",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552677983956723253",
+						"_tpl": "5ac66c5d5acfc4001718d314",
+						"parentId": "155267798325048222",
+						"slotId": "mod_magazine",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552677983501588938",
+						"_tpl": "5648b1504bdc2d9d488b4584",
+						"parentId": "155267798322632458",
+						"slotId": "mod_handguard",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678095959183645",
+						"_tpl": "5ac66c5d5acfc4001718d314",
+						"parentId": "1552678281443089812",
+						"slotId": "3",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678136456178069",
+						"_tpl": "5b44d0de86f774503d30cba8",
+						"parentId": "5c71b934354682353958e9d7",
+						"slotId": "ArmorVest",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678156848403620",
+						"_tpl": "5ab8f4ff86f77431c60d91ba",
+						"parentId": "5c71b934354682353958e9d7",
+						"slotId": "FaceCover",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678176981241929",
+						"_tpl": "56e335e4d2720b6c058b456d",
+						"parentId": "5c71b934354682353958e9d7",
+						"slotId": "Backpack",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678204274898463",
+						"_tpl": "5aa7e4a4e5b5b000137b76f2",
+						"parentId": "5c71b934354682353958e9d7",
+						"slotId": "Headwear",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678220721923698",
+						"_tpl": "5aa7e3abe5b5b000171d064d",
+						"parentId": "1552678204274898463",
+						"slotId": "mod_equipment",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1,
+							"Togglable": {
+								"On": true
+							}
+						}
+					},
+					{
+						"_id": "155267825298106348",
+						"_tpl": "5ac66c5d5acfc4001718d314",
+						"parentId": "1552678281443089812",
+						"slotId": "5",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678253369495665",
+						"_tpl": "5ac66c5d5acfc4001718d314",
+						"parentId": "1552678281443089812",
+						"slotId": "4",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678260409039626",
+						"_tpl": "59e6927d86f77411da468256",
+						"parentId": "1552678095959183645",
+						"slotId": "cartridges",
+						"upd": {
+							"StackObjectsCount": 30
+						}
+					},
+					{
+						"_id": "1552678261729337193",
+						"_tpl": "59e6927d86f77411da468256",
+						"parentId": "1552678253369495665",
+						"slotId": "cartridges",
+						"upd": {
+							"StackObjectsCount": 30
+						}
+					},
+					{
+						"_id": "1552678261297211138",
+						"_tpl": "59e6927d86f77411da468256",
+						"parentId": "155267825298106348",
+						"slotId": "cartridges",
+						"upd": {
+							"StackObjectsCount": 30
+						}
+					},
+					{
+						"_id": "1552678262969011803",
+						"_tpl": "59e6927d86f77411da468256",
+						"parentId": "1552677983956723253",
+						"slotId": "cartridges",
+						"upd": {
+							"StackObjectsCount": 30
+						}
+					},
+					{
+						"_id": "1552678281443089812",
+						"_tpl": "5929a2a086f7744f4b234d43",
+						"parentId": "5c71b934354682353958e9d7",
+						"slotId": "TacticalVest",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552678311162776549",
+						"_tpl": "5bffdc370db834001d23eca8",
+						"parentId": "5c71b934354682353958e9d7",
+						"slotId": "Scabbard",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679335246766151",
+						"_tpl": "590c678286f77426c9660122",
+						"parentId": "5c71b934354682353958e9d6",
+						"slotId": "pocket3",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679339678692148",
+						"_tpl": "544fb37f4bdc2dee738b4567",
+						"parentId": "5c71b934354682353958e9d6",
+						"slotId": "pocket4",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679428659407172",
+						"_tpl": "544fb3364bdc2d34748b456a",
+						"parentId": "5c71b934354682353958e9d6",
+						"slotId": "pocket1",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679443572270019",
+						"_tpl": "590c678286f77426c9660122",
+						"parentId": "5c71b934354682353958e9d6",
+						"slotId": "pocket2",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679763444281770",
+						"_tpl": "590c5f0d86f77413997acfab",
+						"parentId": "1552678176981241929",
+						"slotId": "main",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "155267976725189366",
+						"_tpl": "5448fee04bdc2dbc018b4567",
+						"parentId": "1552678176981241929",
+						"slotId": "main",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679842455620273",
+						"_tpl": "5448be9a4bdc2dfd2f8b456a",
+						"parentId": "1552678281443089812",
+						"slotId": "1",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679845762450779",
+						"_tpl": "5710c24ad2720bc3458b45a3",
+						"parentId": "1552678281443089812",
+						"slotId": "2",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679850532716664",
+						"_tpl": "5a0c27731526d80618476ac4",
+						"parentId": "1552678281443089812",
+						"slotId": "7",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552679862727435107",
+						"_tpl": "5a0c27731526d80618476ac4",
+						"parentId": "1552678281443089812",
+						"slotId": "8",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": "Horizontal",
+							"isSearched": true
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "155267999833754786",
+						"_tpl": "5a0c59791526d8dba737bba7",
+						"parentId": "1552677983447211210",
+						"slotId": "mod_stock",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
+					},
+					{
+						"_id": "1552680031198127615",
+						"_tpl": "57486e672459770abd687134",
+						"parentId": "155267798325048222",
+						"slotId": "mod_mount_000",
+						"location": {
+							"x": 0,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
 					}
 				],
 				"equipment": "5c71b934354682353958e9d7",
