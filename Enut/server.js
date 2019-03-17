@@ -20,7 +20,7 @@ var traderImg = new RegExp('/files/([a-z0-9/\.jpng])+', 'i');
 var content = new RegExp('/uploads/([a-z0-9/\.jpng_])+', 'i');
 var retry = new RegExp('/?retry=\d+', 'i');
 var pushNotifier = new RegExp('/push/notifier/get/', 'i');
-var LoginName = "clean";
+var LoginName = "clear";
 var playerListJson = "client/profile/" + LoginName + "/list.json";
 var LocationForBots = "";
 var ItemOutput = "";
@@ -341,6 +341,12 @@ function handleMoving(body) {
 							tmpList.data[1].Inventory.items.splice(ListKey, 1);
 							console.log("done");
 						}
+						//if(body.items[k].id.replace(' clon', '') == tmpList.data[1].Inventory.items[ListKey].parentId){
+							
+						//}
+						//for (var subListKey in tmpList.data[1].Inventory.items) {
+							
+						//}
 					}
 				}
 				fs.writeFileSync('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json', JSON.stringify(tmpUserTrader, null, "\t"), 'utf8');
