@@ -327,7 +327,17 @@ function handleMoving(body) {
 				
 				console.log(body);
 				
-				//for()
+				for(var k in body.items){
+					for (var ListKey in tmpList.data[1].Inventory.items) {
+						if(body.items[key].id == tmpList.data[1].Inventory.items[ListKey]._id){
+						console.log("we delete item now");
+						ItemOutput.data.items.del.push({"_id": body.items[key].id});
+						tmpList.data[1].Inventory.items.splice(key, 1);
+						}
+					}
+				}
+				fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
+
 				/*
 				for (var key in tmpTrader.data.items) {
 					if (tmpTrader.data.items[key]._id && tmpTrader.data.items[key]._id == body.item_id) {
