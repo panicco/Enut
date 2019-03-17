@@ -20,7 +20,7 @@ var traderImg = new RegExp('/files/([a-z0-9/\.jpng])+', 'i');
 var content = new RegExp('/uploads/([a-z0-9/\.jpng_])+', 'i');
 var retry = new RegExp('/?retry=\d+', 'i');
 var pushNotifier = new RegExp('/push/notifier/get/', 'i');
-var LoginName = "maoci";
+var LoginName = "clean";
 var playerListJson = "client/profile/" + LoginName + "/list.json";
 var LocationForBots = "";
 var ItemOutput = "";
@@ -321,21 +321,29 @@ function handleMoving(body) {
 				}
 			}
 			if(body.type == "sell_to_trader") {
-				//not figure out why i cant sell shit ... // if id exist in trader then i can sell it ..
+				//FIND the wae Uganda helps ...
 				tmpTrader = JSON.parse('{"err": 0,"errmsg": null,"data": ' + ReadJson('client/trading/api/getTraderAssort/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json') + '}');
 				tmpUserTrader = JSON.parse(ReadJson('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json'));
-				
 				console.log(body);
-				
+				var tempReturnValue = 0;
 				for(var k in body.items){
+					
+					for (var tmpK in tmpUserTrader){
+						console.log(tmpK);
+						if(body.items[k].id.replace(' clon', '') == tmpK)
+						tempReturnValue = tmpUserTrader[tmpK].count;
+					}
 					for (var ListKey in tmpList.data[1].Inventory.items) {
-						if(body.items[key].id == tmpList.data[1].Inventory.items[ListKey]._id){
-						console.log("we delete item now");
-						ItemOutput.data.items.del.push({"_id": body.items[key].id});
-						tmpList.data[1].Inventory.items.splice(key, 1);
+						//console.log(body.items[k].id.replace(' clon', '') + " - " + tmpList.data[1].Inventory.items[ListKey]._id);
+						if(body.items[k].id.replace(' clon', '') == tmpList.data[1].Inventory.items[ListKey]._id){
+							delete tmpUserTrader[body.items[k].id.replace(' clon', '')];
+							ItemOutput.data.items.del.push({"_id": body.items[k].id.replace(' clon', '')});
+							tmpList.data[1].Inventory.items.splice(ListKey, 1);
+							console.log("done");
 						}
 					}
 				}
+				fs.writeFileSync('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json', JSON.stringify(tmpUserTrader, null, "\t"), 'utf8');
 				fs.writeFileSync(playerListJson, JSON.stringify(tmpList, null, "\t"), 'utf8');
 
 				/*

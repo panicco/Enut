@@ -793,7 +793,7 @@
 						"parentId": "5c71b934354682353958ea35",
 						"slotId": "hideout",
 						"location": {
-							"x": 0,
+							"x": 9,
 							"y": 0,
 							"r": "Horizontal",
 							"isSearched": true
@@ -803,14 +803,15 @@
 						}
 					},
 					{
-						"_id": "155284868274719066",
+						"_id": "1552857856598667807",
 						"_tpl": "5448fee04bdc2dbc018b4567",
 						"parentId": "5c71b934354682353958ea35",
 						"slotId": "hideout",
 						"location": {
-							"x": 1,
+							"x": 2,
 							"y": 0,
-							"r": 0
+							"r": "Horizontal",
+							"isSearched": true
 						},
 						"upd": {
 							"StackObjectsCount": 1
