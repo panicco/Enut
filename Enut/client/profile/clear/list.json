@@ -801,6 +801,20 @@
 						"upd": {
 							"StackObjectsCount": 9999999
 						}
+					},
+					{
+						"_id": "155284868274719066",
+						"_tpl": "5448fee04bdc2dbc018b4567",
+						"parentId": "5c71b934354682353958ea35",
+						"slotId": "hideout",
+						"location": {
+							"x": 1,
+							"y": 0,
+							"r": 0
+						},
+						"upd": {
+							"StackObjectsCount": 1
+						}
 					}
 				],
 				"equipment": "5c71b934354682353958e9d7",

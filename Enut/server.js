@@ -232,7 +232,7 @@ function handleMoving(body) {
 		case "TradingConfirm":
 			if(body.type == "buy_from_trader") {
 				tmpTrader = JSON.parse('{"err": 0,"errmsg": null,"data": ' + ReadJson('client/trading/api/getTraderAssort/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json') + '}');
-				tmpUserTrader = JSON.parse(ReadJson('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '')));
+				tmpUserTrader = JSON.parse(ReadJson('client/trading/api/getUserAssortPrice/' + body.tid.replace(/[^a-zA-Z0-9]/g, '') + '.json'));
 				for (var key in tmpTrader.data.items) {
 					if (tmpTrader.data.items[key]._id && tmpTrader.data.items[key]._id == body.item_id) {
 						var Stash2D = Array(stashY).fill(0).map(x => Array(stashX).fill(0));
