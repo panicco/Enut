@@ -15,3 +15,10 @@ NUM 2 - Teleport down 1f
 PS. its only work for this version of tarkov (i mean Enut one) - compiled for propably 0.11.6 or 0.11.5 dont really remember there is no actual bypasses in cheat except error logs OFF
 
 im not a person who will throw viruses i github ... but for your safety i let know mods to check this quick - have fun testing capabilities of this crap engine.
+
+** You can easly use dnSpy on it and change whatever you want inside
+
+Links:
+https://www.unknowncheats.me/forum/escape-from-tarkov/317259-news-information-time-kill.html <- source of cheat as UnhandledException.dll
+https://github.com/Michidu/MonoInjector <- as Blatar.exe
+
