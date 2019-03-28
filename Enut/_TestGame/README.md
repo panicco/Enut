@@ -1,7 +1,7 @@
 # Read this b4 download;
 * changed my mind :P here is password: 8de95977b206e46635bcf99fff3c9db3
 #### ARCHIVE SCANS: ####
-* TestGame.7z - SHA-256	f54e5193cdf70736be9f50ef25a15cd67b69b9ca161db3cf9518e4e0a0a6d2e0 - https://www.virustotal.com/#/file-analysis/MTAzMzFhYzg1YzJhZGZlZTRiYTgzZWYzNjMzMGEzMGQ6MTU1Mzc2Njc1MA==
+* TestGame.7z - SHA-256	f54e5193cdf70736be9f50ef25a15cd67b69b9ca161db3cf9518e4e0a0a6d2e0 - https://www.virustotal.com/#/file/f54e5193cdf70736be9f50ef25a15cd67b69b9ca161db3cf9518e4e0a0a6d2e0/detection
 * Blatar.exe (injector) - SHA-256	adb5dc329a5293a3414dc0faa41e54a900651a31f237ddc02152a8feb8f0b36c - https://www.virustotal.com/#/file/adb5dc329a5293a3414dc0faa41e54a900651a31f237ddc02152a8feb8f0b36c/detection
 * UnhandledException.dll - SHA-256	2589ec173f685719cd596f86710d242b1e6c7b67a9589002403f6a60f6cf0c72 - https://www.virustotal.com/#/file/2589ec173f685719cd596f86710d242b1e6c7b67a9589002403f6a60f6cf0c72/detection
 * StartInject.bat - `Blatar.exe --dll "UnhandledException.dll" --target EscapeFromTarkov.exe --namespace UnhandledExceptionHandler --class ErrorLog --method Start`
