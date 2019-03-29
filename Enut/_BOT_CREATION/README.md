@@ -1,43 +1,39 @@
-# Bot Creation script v0.2
-###### Script to helps in creation bots
+#Bot Creation Tool
+Created by: Maoci
+Modified by: panickode
 
-_Folders:_
+#How To Use
 ```
-_bots from Йурасзка - contain custom marksman bots (count 5)
-_bots from polivilas - contains base assault bots (count 19)
-```
-
-- Info:
-  - you just need to create user profile with equipment and other needed data such as health changes (if any) and customization changes (if any)
-  - use `InsuredItems": []},` to add new like `\n` at the end of it
-  - BotProfile -> you put there an list.json from player profile
-  - Start script from file  run.bat
-  - Configuration of bot making located in same directory with name Settings.json
-
-```
-{
-	"BotType": "assault",
-	"BotDifficulty": "easy",
-	"RandomLookForSavage": true,
-	"IsThatBoss": false,
-	"BossName": "Reshala",
-	"DumpToConsoleOnly": false,
-	"ClearFileB4dump": true
-}
+1)Create character loadout in game
+2)Remove all items from stash (can leave cash here)
+3)back to main menu, exit game
+4)Copy profile to BotProfile folder (client/profile/list.json)
+5)Edit Settings as needed
+6)start run.bat
+7)output.json(new bot) / randomz.json(id tags randomized)
 ```
 
-##### More explanation about the code working
+#Known Issues
+```
+1)PanicRandom will only work if output/randomz file is blank and exsists
+	- Need to create files if not there
+	- Clear files or learn to read breaks between bots
 
-step by step:
-* grab settings from line 44 and below
-* display them using console.log
-* grab files from `BotProfile` folder and make table with names
-* loop through the files
-* creating randomize Customizablez from default scavs if `randomizeS` == true
-* grab russian name and surname from website if `isBoss` == false if true grab BossName as name
-* delete items which has slotId equals to hideout
-* create unique ID's to equipment/stash/and other needed shit
-* replace it in inventory and _id of bot to make it unique
-* create json table for one record and drop it in file
-* if `saveSingle` == true deletes all Output.json content on first record and push new records
-* on all done push `-> Finished Creation of`
+2)Unable to clear stash
+	- Script working to find header items in stash and remove
+	- Not able to use hideout id's to removed other items (hideout _id to removed item by parentId)
+		- need to list _id's to var then itterate through list and remove matching parentId
+		
+```
+
+#Change Log
+```
+- Updated hideout removal to be recursive
+	- issue: need to remove items based on hideout id's - stash still needs to be cleared
+	
+- Removed Header Id changes for equiptment,stash,etc.
+	-Id's need to be unique and matching
+	
+- Added Id Ranomization and replacement
+	-PanicRandom addition added. Bot Id's and matching ids will be replaced so all top ids are unique
+````

@@ -1,7 +1,7 @@
 {
-	"BotType": "followerBully",
-	"BotDifficulty": "impossible",
-	"RandomLookForSavage": false,
+	"BotType": "pmcBot", 
+	"BotDifficulty": "normal",
+	"RandomLookForSavage": true,
 	"IsThatBoss": false,
 	"BossName": "Reshala",
 	"DumpToConsoleOnly": false,
