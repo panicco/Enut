@@ -110,7 +110,7 @@ console.log("} Start creating for file: " + listFiles[i])
 		for (var tmpKey in profileList.Inventory.items) {	
 			if (profileList.Inventory.items[tmpKey].slotId == "hideout") {
 				var hideId = profileList.Inventory.items[tmpKey]._id;
-				profileList.Inventory.items.splice(tmpKey, 100);
+				profileList.Inventory.items.splice(tmpKey, 1);
 				//console.log("Hideout Found: " + hideId);
 				//need to create list here of id's (to match to parentId and splice)
 				hloop = true;
