@@ -54,6 +54,11 @@ function randomString(length, chars) {
 //main script starts here
 (async (url) => {
 	
+	//PK CLEAR OLD FILE (ADD SETTING TO TURN OFF PRANDOM)
+	var emptyf = "";
+	fs.writeFileSync('Output.json', emptyf, 'utf8');
+	fs.writeFileSync('randomz.json', outJson, 'utf8');
+
 	var Settings = JSON.parse(ReadJson('Settings.json'));
 	
 	var botType 	= Settings.BotType;
@@ -116,7 +121,7 @@ console.log("} Start creating for file: " + listFiles[i])
 				hloop = true;
 			}
 			else {
-				console.log("No Hideouts found");
+				//console.log("No Hideouts found");
 				hloop = false;
 			}
 		}
