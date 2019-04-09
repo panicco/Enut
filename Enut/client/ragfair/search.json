@@ -1,0 +1,16 @@
+{
+	"err": 0,
+	"errmsg": null,
+	"data":
+	{
+		"item_test_1":
+		{
+			"_id":"item_test_1",
+			"price":1,
+			"quantity":1337,
+			"priotized":false,
+			"_tpl":"dtmdr"
+		}
+
+	}
+}
