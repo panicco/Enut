@@ -26,9 +26,20 @@ var LocationForBots = "";
 var ItemOutput = "";
 var stashX = 10; // fix for your stash size
 var stashY = 66; // ^ if you edited it ofc
-function ReadJson(file) {
-	return (fs.readFileSync(file, 'utf8')).replace(/[\r\n\t]/g, '');
-}
+function ReadJson(file) 
+{	
+	var fileContents;
+	try 
+	{
+		fileContents = (fs.readFileSync(file, 'utf8')).replace(/[\r\n\t]/g, '');
+  		return fileContents;
+	} 
+	catch (err) 
+	{
+		console.log("file "+ file +" was not found  | " + err); //handling this error prevent server crash when autologging 
+	}
+}// *** BALIST0N - added
+
 
 var itemJSON = JSON.parse(ReadJson('client/items.json'));
 itemJSON = itemJSON.data;
@@ -581,6 +592,12 @@ function handleRequest(req, body, url) {
 		case "/client/quest/list":
 			FinalOutput = ReadJson('client/quest/list.json');
 			break;
+		//*************		BALIST0N : testing flea market and try to make it work
+		case "/client/ragfair/search":
+			DisplayStatus(url,body)
+			FinalOutput = ReadJson('client/ragfair/search.json');
+			break;
+		//*************		
 		case "/client/game/bot/generate":
 			DisplayStatus(url,body)
 			FinalOutput = prepareRandomBot(body);
