@@ -1,9 +1,10 @@
 {
-	"BotType": "followerBully",
-	"BotDifficulty": "impossible",
-	"RandomLookForSavage": false,
+	"BotType": "assault", 
+	"BotDifficulty": "easy",
+	"RandomLookForSavage": true,
 	"IsThatBoss": false,
 	"BossName": "Reshala",
 	"DumpToConsoleOnly": false,
-	"ClearFileB4dump": false
+	"ClearFileB4dump": false,
+	"PanicRandom": true
 }
